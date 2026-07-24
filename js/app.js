@@ -72,6 +72,22 @@ $scope.selectMovie = function(movie){
 
 };
 
+$scope.selectedShow = null;
+
+$scope.showSeatSelection = false;
+
+$scope.selectShow = function (show) {
+
+    $scope.selectedShow = show;
+
+    $scope.showSeatSelection = true;
+
+    loadSeats(show);
+
+};
+
+
+
 
 
 

@@ -177,6 +177,38 @@
 
     </div>
 
+
+    <section class="show-section" ng-show="showShowSelection">
+
+    <h2 class="section-title">
+
+        Select Show Time
+
+    </h2>
+
+    <div class="show-container">
+
+        <button
+            class="show-btn"
+            ng-repeat="show in selectedMovie.shows"
+            ng-click="selectShow(show)"
+            ng-class="{'active-show':selectedShow==show}">
+
+            {{show}}
+
+        </button>
+
+    </div>
+
+    
+       
+
+</section>
+
+
+
+
+
 </body>
 
 </html>
