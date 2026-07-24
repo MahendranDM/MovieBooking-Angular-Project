@@ -2,57 +2,204 @@
 <html lang="en" ng-app="MovieBooking">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Seat Booking</title>
+
+    <title>Cinema Talkies</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
     <script src="js/app.js"></script>
 
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body ng-controller="bookingController">
 
-    <nav>
-        <h2>{{appName}}</h2>
+    <nav class="navbar">
+
+        <h2>🎬 Cinema Talkies</h2>
 
         <ul>
-            <li>Home</li>
-<li><a href="movies.html">Movies</a></li>
-            <li>Seats</li>
-            <li>Booking</li>
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="bookmovie.html">Book Movie</a></li>
+
         </ul>
+
     </nav>
 
     <section class="hero">
 
-        <h1>{{welcomeMessage}}</h1>
+        <h1>Experience Movies Like Never Before</h1>
 
-        <p>{{description}}</p>
+        <p>
+            Book tickets for the latest blockbusters in just a few clicks.
+        </p>
+
+        <a href="booking.html">
+
+            <button class="hero-btn">
+
+                🎟 Book Now
+
+            </button>
+
+        </a>
 
     </section>
 
-    <section class="dashboard" ng-init="cardColor='#1f1f1f'">
+    <h1 class="page-title">
 
-        <h2>Dashboard</h2>
+        Latest Movies
 
-        <div class="card-container">
+    </h1>
 
-            <div class="card"
-                 ng-repeat="item in dashboard"
-                 ng-class="{'highlight': item.title=='Ticket Price'}"
-                 ng-style="{'background':cardColor}">
+    <div class="movie-container">
 
-                <h3>{{item.title}}</h3>
+        <div class="movie-card">
 
-                <p>{{item.value}}</p>
+            <img src="https://placehold.co/250x350?text=LEO">
+
+            <h2>LEO</h2>
+
+            <p><strong>Genre :</strong> Action</p>
+
+            <p><strong>Language :</strong> Tamil</p>
+
+            <p><strong>Duration :</strong> 2h 45m</p>
+
+            <p><strong>Rating :</strong> ⭐⭐⭐⭐⭐</p>
+
+        </div>
+
+        <div class="movie-card">
+
+            <img src="https://placehold.co/250x350?text=PREMALU">
+
+            <h2>PREMALU</h2>
+
+            <p><strong>Genre :</strong> Romance</p>
+
+            <p><strong>Language :</strong> Malayalam</p>
+
+            <p><strong>Duration :</strong> 2h 20m</p>
+
+            <p><strong>Rating :</strong> ⭐⭐⭐⭐</p>
+
+        </div>
+
+        <div class="movie-card">
+
+            <img src="https://placehold.co/250x350?text=ENDGAME">
+
+            <h2>AVENGERS ENDGAME</h2>
+
+            <p><strong>Genre :</strong> Action</p>
+
+            <p><strong>Language :</strong> English</p>
+
+            <p><strong>Duration :</strong> 3h</p>
+
+            <p><strong>Rating :</strong> ⭐⭐⭐⭐⭐</p>
+
+        </div>
+
+        <div class="movie-card">
+
+            <img src="https://placehold.co/250x350?text=INTERSTELLAR">
+
+            <h2>INTERSTELLAR</h2>
+
+            <p><strong>Genre :</strong> Sci-Fi</p>
+
+            <p><strong>Language :</strong> English</p>
+
+            <p><strong>Duration :</strong> 2h 49m</p>
+
+            <p><strong>Rating :</strong> ⭐⭐⭐⭐⭐</p>
+
+        </div>
+
+        <div class="movie-card">
+
+            <img src="https://placehold.co/250x350?text=KGF+2">
+
+            <h2>KGF CHAPTER 2</h2>
+
+            <p><strong>Genre :</strong> Action</p>
+
+            <p><strong>Language :</strong> Kannada</p>
+
+            <p><strong>Duration :</strong> 2h 50m</p>
+
+            <p><strong>Rating :</strong> ⭐⭐⭐⭐⭐</p>
+
+        </div>
+
+        <div class="movie-card">
+
+            <img src="https://placehold.co/250x350?text=PUSHPA+2">
+
+            <h2>PUSHPA 2</h2>
+
+            <p><strong>Genre :</strong> Action</p>
+
+            <p><strong>Language :</strong> Telugu</p>
+
+            <p><strong>Duration :</strong> 3h 10m</p>
+
+            <p><strong>Rating :</strong> ⭐⭐⭐⭐</p>
+
+        </div>
+
+    </div>
+
+    <section class="about">
+
+        <h2>Why Choose Cinema Talkies?</h2>
+
+        <div class="features">
+
+            <div class="feature-card">
+
+                <h3>🎬 Latest Movies</h3>
+
+                <p>Watch newly released movies in high-quality theatres.</p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <h3>💺 Easy Seat Selection</h3>
+
+                <p>Select your favourite seats with an interactive layout.</p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <h3>⚡ Instant Booking</h3>
+
+                <p>Book tickets within seconds with a simple booking process.</p>
 
             </div>
 
         </div>
 
     </section>
+
+    <footer>
+
+        <p>
+
+            © 2026 Cinema Talkies | Movie Ticket Booking System
+
+        </p>
+
+    </footer>
 
 </body>
 
