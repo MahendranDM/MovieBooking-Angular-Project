@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MovieBooking">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Seat Booking</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+    <script src="js/app.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body ng-controller="bookingController">
+
+    <nav>
+        <h2>{{appName}}</h2>
+
+        <ul>
+            <li>Home</li>
+            <li>Movies</li>
+            <li>Seats</li>
+            <li>Booking</li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+
+        <h1>{{welcomeMessage}}</h1>
+
+        <p>{{description}}</p>
+
+    </section>
+
+</body>
+
+</html>
