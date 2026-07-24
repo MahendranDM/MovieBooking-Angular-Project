@@ -193,3 +193,57 @@ cursor:pointer;
 background:#c40000;
 
 }
+
+
+
+
+.selected-card{
+
+    border:3px solid gold;
+
+    transform:scale(1.03);
+
+}
+
+.selected-movie{
+
+    width:80%;
+    margin:40px auto;
+    padding:25px;
+
+    background:#1f1f1f;
+
+    border-radius:10px;
+
+    text-align:center;
+
+}
+
+.selected-movie h2{
+
+    color:gold;
+    margin-bottom:15px;
+
+}
+
+.selected-movie button{
+
+    padding:12px 25px;
+
+    background:green;
+
+    color:white;
+
+    border:none;
+
+    border-radius:5px;
+
+    cursor:pointer;
+
+}
+
+.selected-movie button:hover{
+
+    background:#0b8a0b;
+
+}

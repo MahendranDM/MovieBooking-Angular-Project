@@ -85,6 +85,14 @@ price:400
 ];
 
 
+$scope.selectedMovie = null;
+
+$scope.selectMovie = function(movie) {
+
+    $scope.selectedMovie = movie;
+
+};
+
 
 
 
