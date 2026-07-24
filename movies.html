@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MovieBooking">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Movies</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+
+    <script src="js/app.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body ng-controller="bookingController">
+
+<nav>
+
+<h2>{{appName}}</h2>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li>Movies</li>
+
+<li>Seats</li>
+
+<li>Booking</li>
+
+</ul>
+
+</nav>
+
+<h1 class="page-title">
+
+Now Showing
+
+</h1>
+
+<div class="movie-container">
+
+<div class="movie-card" ng-repeat="movie in movies">
+
+<img src="https://placehold.co/250x350?text=Movie+Poster">
+
+<h2>{{movie.name | uppercase}}</h2>
+
+<p><strong>Genre :</strong> {{movie.genre}}</p>
+
+<p><strong>Language :</strong> {{movie.language}}</p>
+
+<p><strong>Duration :</strong> {{movie.duration}}</p>
+
+<p><strong>Show :</strong> {{movie.show}}</p>
+
+<p><strong>Price :</strong> {{movie.price | currency:'₹'}}</p>
+
+<button>Select Movie</button>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
