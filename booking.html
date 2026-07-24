@@ -31,6 +31,14 @@
                 <a href="booking.html">Book Movie</a>
             </li>
 
+            <li>
+                <a href="booking-details.html">Booking Details</a>
+            </li>
+
+            <li>
+                <a href="ticket.html">Ticket</a>
+            </li>
+
         </ul>
 
     </nav>
@@ -50,14 +58,12 @@
     <div class="movie-container">
 
         <div class="movie-card"
-
              ng-repeat="movie in movies"
-
              ng-class="{'selected-card': selectedMovie == movie}">
 
             <img
-                ng-src="https://placehold.co/250x350?text={{movie.name}}"
-                alt="{{movie.name}}">
+                ng-src="{{movie.image}}"
+                alt="{{movie.name}} poster">
 
             <h2>
 
@@ -97,23 +103,15 @@
 
             </p>
 
-            <button
-
-                ng-click="selectMovie(movie)">
-
+            <button ng-click="selectMovie(movie)">
                 Select Movie
-
             </button>
 
         </div>
 
     </div>
 
-    <div
-
-        class="selected-movie"
-
-        ng-show="selectedMovie">
+    <div class="selected-movie" ng-show="selectedMovie">
 
         <h2>
 
@@ -123,87 +121,82 @@
 
         <hr>
 
-        <p>
+        <img ng-src="{{selectedMovie.image}}" alt="{{selectedMovie.name}} poster">
 
+        <p>
             <strong>Movie :</strong>
-
             {{selectedMovie.name}}
-
         </p>
 
         <p>
-
             <strong>Genre :</strong>
-
             {{selectedMovie.genre}}
-
         </p>
 
         <p>
-
             <strong>Language :</strong>
-
             {{selectedMovie.language}}
-
         </p>
 
         <p>
-
             <strong>Duration :</strong>
-
             {{selectedMovie.duration}}
-
         </p>
 
         <p>
-
             <strong>Ticket Price :</strong>
-
             {{selectedMovie.price | currency:"₹"}}
-
         </p>
 
-        <br>
-
-        <button
-
-            class="continue-btn"
-
-            ng-click="showShowSelection=true">
-
-            Continue
-
-        </button>
-
     </div>
 
+    <section class="show-section" ng-show="selectedMovie">
 
-    <section class="show-section" ng-show="showShowSelection">
+        <h2 class="section-title">
 
-    <h2 class="section-title">
+            Select Show Time
 
-        Select Show Time
+        </h2>
 
-    </h2>
+        <div class="show-container">
 
-    <div class="show-container">
+            <button
+                class="show-btn"
+                ng-repeat="show in selectedMovie.shows"
+                ng-click="selectShow(show)"
+                ng-class="{'active-show': selectedShow == show}">
+                {{show}}
+            </button>
 
-        <button
-            class="show-btn"
-            ng-repeat="show in selectedMovie.shows"
-            ng-click="selectShow(show)"
-            ng-class="{'active-show':selectedShow==show}">
+        </div>
 
-            {{show}}
+    </section>
 
-        </button>
-
+    <div class="seat-map" ng-show="showSeatSelection">
+        <div class="seat-row" ng-repeat="row in seatRows">
+            <div class="seat"
+                 ng-class="{selected: seat.selected, booked: seat.booked}"
+                 ng-click="toggleSeat(seat)"
+                 ng-repeat="seat in row">
+                {{seat.label}}
+            </div>
+        </div>
     </div>
 
-    
-       
-
-</section>
+    <div class="booking-summary" ng-show="showSeatSelection">
+        <h2>Seat Selection</h2>
+        <div class="summary-row">
+            <strong>Selected Seats:</strong>
+            <span>{{selectedSeats.length ? selectedSeats.join(', ') : 'None'}}</span>
+        </div>
+        <div class="summary-row">
+            <strong>Total:</strong>
+            <span>{{getSeatTotal() | currency:"₹"}}</span>
+        </div>
+        <button class="confirm-btn" ng-click="confirmBooking()" ng-disabled="!selectedSeats.length">
+            Confirm Booking
+        </button>
+    </div>
 
 
 
