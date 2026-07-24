@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MovieBooking">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Movie</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+    <script src="js/app.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body ng-controller="bookingController">
+
+    <nav class="navbar">
+
+        <h2>🎬 Cinema Talkies</h2>
+
+        <ul>
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="booking.html">Book Movie</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <h1 class="page-title">
+
+        Book Your Movie
+
+    </h1>
+
+    <h2 class="section-title">
+
+        Select a Movie
+
+    </h2>
+
+    <div class="movie-container">
+
+        <div class="movie-card"
+
+             ng-repeat="movie in movies"
+
+             ng-class="{'selected-card': selectedMovie == movie}">
+
+            <img
+                ng-src="https://placehold.co/250x350?text={{movie.name}}"
+                alt="{{movie.name}}">
+
+            <h2>
+
+                {{movie.name}}
+
+            </h2>
+
+            <p>
+
+                <strong>Genre :</strong>
+
+                {{movie.genre}}
+
+            </p>
+
+            <p>
+
+                <strong>Language :</strong>
+
+                {{movie.language}}
+
+            </p>
+
+            <p>
+
+                <strong>Duration :</strong>
+
+                {{movie.duration}}
+
+            </p>
+
+            <p>
+
+                <strong>Ticket Price :</strong>
+
+                {{movie.price | currency:"₹"}}
+
+            </p>
+
+            <button
+
+                ng-click="selectMovie(movie)">
+
+                Select Movie
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <div
+
+        class="selected-movie"
+
+        ng-show="selectedMovie">
+
+        <h2>
+
+            Selected Movie
+
+        </h2>
+
+        <hr>
+
+        <p>
+
+            <strong>Movie :</strong>
+
+            {{selectedMovie.name}}
+
+        </p>
+
+        <p>
+
+            <strong>Genre :</strong>
+
+            {{selectedMovie.genre}}
+
+        </p>
+
+        <p>
+
+            <strong>Language :</strong>
+
+            {{selectedMovie.language}}
+
+        </p>
+
+        <p>
+
+            <strong>Duration :</strong>
+
+            {{selectedMovie.duration}}
+
+        </p>
+
+        <p>
+
+            <strong>Ticket Price :</strong>
+
+            {{selectedMovie.price | currency:"₹"}}
+
+        </p>
+
+        <br>
+
+        <button
+
+            class="continue-btn"
+
+            ng-click="showShowSelection=true">
+
+            Continue
+
+        </button>
+
+    </div>
+
+</body>
+
+</html>

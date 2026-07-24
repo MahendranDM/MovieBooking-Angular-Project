@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #111827;
+    color: white;
+}
+
+.navbar {
+    background: #1f2937;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 60px;
+    position: sticky;
+    top: 0;
+}
+
+.navbar h2 {
+    color: #fbbf24;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #fbbf24;
+}
+
+.hero {
+    text-align: center;
+    padding: 90px 20px;
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
+    url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1500&q=80");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #ddd;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    background: #fbbf24;
+    color: black;
+    border: none;
+    padding: 14px 35px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.hero-btn:hover {
+    background: #f59e0b;
+}
+
+.page-title {
+    text-align: center;
+    margin: 50px 0 30px;
+    color: #fbbf24;
+}
+
+.section-title {
+    text-align: center;
+    margin: 40px 0 25px;
+    color: #fbbf24;
+}
+
+.movie-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding-bottom: 50px;
+}
+
+.movie-card {
+    width: 260px;
+    background: #1f2937;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .3s;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,.4);
+}
+
+.movie-card:hover {
+    transform: translateY(-8px);
+}
+
+.movie-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.movie-card h2 {
+    margin: 15px 0;
+    color: #fbbf24;
+}
+
+.movie-card p {
+    margin: 8px 20px;
+    text-align: left;
+    color: #ddd;
+}
+
+.movie-card button {
+    width: 85%;
+    margin: 20px 0;
+    padding: 12px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.movie-card button:hover {
+    background: #1d4ed8;
+}
+
+.selected-card {
+    border: 3px solid #22c55e;
+}
+
+.selected-movie {
+    width: 500px;
+    margin: 30px auto 60px;
+    background: #1f2937;
+    padding: 25px;
+    border-radius: 10px;
+    border: 2px solid #22c55e;
+}
+
+.selected-movie h2 {
+    text-align: center;
+    color: #22c55e;
+    margin-bottom: 20px;
+}
+
+.selected-movie p {
+    margin: 12px 0;
+}
+
+.about {
+    width: 90%;
+    margin: auto;
+    padding: 60px 0;
+}
+
+.about h2 {
+    text-align: center;
+    color: #fbbf24;
+    margin-bottom: 40px;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    width: 300px;
+    background: #1f2937;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+    color: #fbbf24;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #1f2937;
+    margin-top: 40px;
+}
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction: column;
+        gap: 20px;
+        padding:20px;
+    }
+
+    .navbar ul{
+        flex-direction: column;
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .movie-card{
+        width:90%;
+    }
+
+    .selected-movie{
+        width:90%;
+    }
+
+}
