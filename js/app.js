@@ -142,6 +142,18 @@ $scope.toggleSeat=function(seat){
 
 }
 
+$scope.booking = {};
+
+$scope.bookingSuccess = false;
+
+$scope.bookTicket = function () {
+
+    $scope.bookingSuccess = true;
+
+};
+
+
+
 
 
 

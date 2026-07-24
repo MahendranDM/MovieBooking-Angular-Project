@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MovieBooking">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Booking Form</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+    <script src="js/app.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body ng-controller="bookingController">
+
+    <nav>
+
+        <h2>{{appName}}</h2>
+
+        <ul>
+
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="seats.html">Seats</a></li>
+            <li>Booking</li>
+
+        </ul>
+
+    </nav>
+
+    <h1 class="page-title">Booking Form</h1>
+
+    <form name="bookingForm"
+          class="booking-form"
+          ng-submit="bookTicket()"
+          novalidate>
+
+        <label>Customer Name</label>
+
+        <input
+            type="text"
+            name="customerName"
+            ng-model="booking.name"
+            required
+            minlength="3">
+
+        <p class="error"
+           ng-show="bookingForm.customerName.$touched &&
+                    bookingForm.customerName.$error.required">
+
+            Name is required
+
+        </p>
+
+        <p class="error"
+           ng-show="bookingForm.customerName.$error.minlength">
+
+            Minimum 3 characters
+
+        </p>
+
+        <label>Email</label>
+
+        <input
+            type="email"
+            name="email"
+            ng-model="booking.email"
+            required>
+
+        <p class="error"
+           ng-show="bookingForm.email.$touched &&
+                    bookingForm.email.$error.required">
+
+            Email is required
+
+        </p>
+
+        <p class="error"
+           ng-show="bookingForm.email.$error.email">
+
+            Invalid Email
+
+        </p>
+
+        <label>Phone Number</label>
+
+        <input
+            type="tel"
+            name="phone"
+            ng-model="booking.phone"
+            ng-minlength="10"
+            ng-maxlength="10"
+            required>
+
+        <p class="error"
+           ng-show="bookingForm.phone.$touched &&
+                    bookingForm.phone.$error.required">
+
+            Phone Number Required
+
+        </p>
+
+        <p class="error"
+           ng-show="bookingForm.phone.$error.minlength">
+
+            Must contain 10 digits
+
+        </p>
+
+        <p class="error"
+           ng-show="bookingForm.phone.$error.maxlength">
+
+            Maximum 10 digits
+
+        </p>
+
+        <label>Select Movie</label>
+
+        <select
+            ng-model="booking.movie"
+            ng-options="movie.name for movie in movies"
+            required>
+
+            <option value="">Choose Movie</option>
+
+        </select>
+
+        <label>Show Time</label>
+
+        <select
+            ng-model="booking.show"
+            required>
+
+            <option value="">Choose Show</option>
+
+            <option>10:00 AM</option>
+            <option>1:30 PM</option>
+            <option>4:00 PM</option>
+            <option>7:00 PM</option>
+            <option>9:30 PM</option>
+
+        </select>
+
+        <br><br>
+
+        <button
+            type="submit"
+            ng-disabled="bookingForm.$invalid">
+
+            Book Ticket
+
+        </button>
+
+    </form>
+
+    <div
+        class="success"
+        ng-show="bookingSuccess">
+
+        <h2>
+
+            🎉 Booking Submitted Successfully!
+
+        </h2>
+
+        <a href="summary.html">
+
+            <button>
+
+                View Booking Summary
+
+            </button>
+
+        </a>
+
+    </div>
+
+</body>
+
+</html>
