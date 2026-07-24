@@ -94,6 +94,56 @@ $scope.selectMovie = function(movie) {
 };
 
 
+$scope.seats = [];
+
+$scope.selectedSeats = [];
+
+for(let i=1;i<=40;i++){
+
+    $scope.seats.push({
+
+        number:i,
+
+        status:"available",
+
+        selected:false
+
+    });
+
+}
+
+$scope.seats[4].status="reserved";
+$scope.seats[8].status="reserved";
+$scope.seats[12].status="reserved";
+$scope.seats[19].status="reserved";
+$scope.seats[27].status="reserved";
+$scope.seats[34].status="reserved";
+
+$scope.toggleSeat=function(seat){
+
+    if(seat.status=="reserved")
+        return;
+
+    seat.selected=!seat.selected;
+
+    if(seat.selected){
+
+        $scope.selectedSeats.push(seat.number);
+
+    }
+
+    else{
+
+        var index=$scope.selectedSeats.indexOf(seat.number);
+
+        $scope.selectedSeats.splice(index,1);
+
+    }
+
+}
+
+
+
 
 
 
